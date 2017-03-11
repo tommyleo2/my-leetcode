@@ -1,6 +1,5 @@
-
 EXT := cpp
-SRCS := $(shell ls *.$(EXT))
+SRCS := $(wildcard *.$(EXT))
 BIN_DIR = bin
 TARGETS := $(patsubst %, $(BIN_DIR)/%, $(SRCS:.$(EXT)=))
 
