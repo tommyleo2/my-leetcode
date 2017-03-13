@@ -1,12 +1,13 @@
 EXT := cpp
+CPPFLAGS := -std=c++11 -g
+BIN_DIR := bin
 SRCS := $(wildcard *.$(EXT))
-BIN_DIR = bin
-TARGETS := $(patsubst %, $(BIN_DIR)/%, $(SRCS:.$(EXT)=))
+TARGETS := $(SRCS:%.$(EXT)=$(BIN_DIR)/%)
 
 
 all: $(TARGETS)
 
 
-$(BIN_DIR)/%: %.$(EXT)
-	@mkdir -p bin
-	g++ -std=c++11 $^ -g -o $@
+$(TARGETS): $(BIN_DIR)/% : %.$(EXT) headers.hpp
+	@mkdir -p $(BIN_DIR)
+	g++ $(CPPFLAGS) $< -o $@
