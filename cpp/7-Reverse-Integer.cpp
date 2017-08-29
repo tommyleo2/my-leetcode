@@ -3,12 +3,12 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int reverse(int x) {
     if (x == -2147483648) return 0;
     if (!x) return 0;
-     bool sign = x < 0;
-     x = sign ? -x : x;
+    bool sign = x < 0;
+    x = sign ? -x : x;
 
     int result = 0;
 
@@ -45,15 +45,12 @@ public:
     int bitx = 0, bity = 0;
     while (x >> bitx) bitx++;
     while (y >> bity) bity++;
-    if (bitx< 32 && bity < 32) return x + y;
+    if (bitx < 32 && bity < 32) return x + y;
     return -1;
   }
-
 };
 
-
 int main(void) {
-
   Solution s;
   int x;
   std::cin >> x;

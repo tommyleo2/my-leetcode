@@ -1,11 +1,14 @@
 /**
-   The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+   The string "PAYPALISHIRING" is written in a zigzag pattern on a given number
+   of rows like this: (you may want to display this pattern in a fixed font for
+   better legibility)
 
    P   A   H   N
    A P L S I I G
    Y   I   R
    And then read line by line: "PAHNAPLSIIGYIR"
-   Write the code that will take a string and make this conversion given a number of rows:
+   Write the code that will take a string and make this conversion given a
+   number of rows:
 
    string convert(string text, int nRows);
    convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
@@ -16,7 +19,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string convert(string s, int numRows) {
     if (numRows == 1) {
       return s;
@@ -46,7 +49,7 @@ public:
       }
     }
     string result;
-    for (string &str: strings) {
+    for (string &str : strings) {
       result += str;
     }
     return result;
@@ -56,6 +59,6 @@ public:
 int main(void) {
   Solution s;
   string result = s.convert("PAYPALISHIRING", 1);
-  cout << result << endl << (result ==  "PAHNAPLSIIGYIR") << endl;
+  cout << result << endl << (result == "PAHNAPLSIIGYIR") << endl;
   return 0;
 }

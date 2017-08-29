@@ -7,8 +7,7 @@
   Note: You may not slant the container and n is at least 2.
  */
 
-#include <iostream>
-#include <vector>
+#include "headers.hpp"
 
 using namespace std;
 

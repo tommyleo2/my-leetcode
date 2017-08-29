@@ -1,5 +1,6 @@
 /**
- *  Given a string, find the length of the longest substring without repeating characters.
+ *  Given a string, find the length of the longest substring without repeating
+ characters.
 
  *  Examples:
 
@@ -7,7 +8,8 @@
 
  *  Given "bbbbb", the answer is "b", with the length of 1.
 
- *  Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ *  Given "pwwkew", the answer is "wke", with the length of 3. Note that the
+ answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 
 #include "headers.hpp"
@@ -15,7 +17,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int lengthOfLongestSubstring(string s) {
     auto start_position = s.begin();
     auto current_position = s.begin();
@@ -33,7 +35,6 @@ public:
         }
         current_length = it - pos;
         current_position = pos + 1;
-
       }
     }
     if (current_length > length) {
@@ -42,7 +43,6 @@ public:
     return length;
   }
 };
-
 
 int main() {
   string s;

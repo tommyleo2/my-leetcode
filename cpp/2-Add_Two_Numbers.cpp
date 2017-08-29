@@ -1,28 +1,28 @@
 /**
- *  You are given two non-empty linked lists representing two non-negative integers.
- *  The digits are stored in reverse order and each of their nodes contain a single digit.
+ *  You are given two non-empty linked lists representing two non-negative
+ integers.
+ *  The digits are stored in reverse order and each of their nodes contain a
+ single digit.
  *  Add the two numbers and return it as a linked list.
 
- *  You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ *  You may assume the two numbers do not contain any leading zero, except the
+ number 0 itself.
 
  *  Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  *  Output: 7 -> 0 -> 8
  */
 
-#include <iostream>
-#include <string>
+#include "headers.hpp"
 
-// Definition for singly-linked list.
 struct ListNode {
   int val;
   ListNode *next;
   ListNode(int x) : val(x), next(NULL) {}
 };
 
-
 class Solution {
-public:
-  ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+ public:
+  ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
     int carry = 0;
     ListNode result = ListNode(0);
     ListNode *last = &result;
@@ -70,12 +70,12 @@ int main(void) {
   ListNode l1(0), l2(0);
   ListNode *last1 = &l1, *last2 = &l2;
   cin >> s1 >> s2;
-  for (int i = s1.size() - 1; i >=0; i--) {
+  for (int i = s1.size() - 1; i >= 0; i--) {
     ListNode *tmp = new ListNode(s1[i] - '0');
     last1->next = tmp;
     last1 = tmp;
   }
-  for (int i = s2.size() - 1; i >=0; i--) {
+  for (int i = s2.size() - 1; i >= 0; i--) {
     ListNode *tmp = new ListNode(s2[i] - '0');
     last2->next = tmp;
     last2 = tmp;
@@ -83,7 +83,7 @@ int main(void) {
   Solution s;
   ListNode *result = s.addTwoNumbers(l1.next, l2.next);
 
-  ListNode *tmp =result;
+  ListNode *tmp = result;
   string result_s;
   while (tmp != NULL) {
     result_s.insert(0, 1, tmp->val + '0');

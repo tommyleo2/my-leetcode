@@ -1,5 +1,6 @@
 /**
- * Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+ * Given a string s, find the longest palindromic substring in s. You may assume
+ that the maximum length of s is 1000.
 
  * Example:
 
@@ -20,7 +21,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string longestPalindrome(string s) {
     if (s.size() < 2) {
       return s;
@@ -44,8 +45,7 @@ public:
       }
       //  odd length size
       trace = 1;
-      while (stack_top + trace < s.end() &&
-             stack_top - trace >= s.begin() &&
+      while (stack_top + trace < s.end() && stack_top - trace >= s.begin() &&
              *(stack_top + trace) == *(stack_top - trace)) {
         trace++;
       }
