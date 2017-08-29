@@ -55,6 +55,6 @@ public:
 
 int main(void) {
     Solution s;
-    cout << boolalpha << (s.isMatch("a", ".*..a*") == true) << endl;
+    cout << boolalpha << (s.isMatch("aa", ".*..a*") == true) << endl;
     return 0;
 }
